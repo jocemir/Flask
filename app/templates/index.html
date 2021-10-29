@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <title>Gerenciador</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename="css/bootstrap.min.css") }}">
+    </head>
+<body>
+    <h2>Olá, bem vindo ao Gerenciador</h2>
+    <h4>Status do LED >> {{ ledred }} </h4>
+    {% if ledred == 'LED vermelho ON' %}
+    <a class="btn btn-primary" href="/led_vermelho/off" role="button">Desligar</a>
+    {% else %}
+    <a class="btn btn-primary" href="/led_vermelho/on" role="button">Ligar</a>
+    {% endif %}
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="{{ url_for('static', filename="js/bootstrap.min.js") }}"></script>
+</body>
+</html>
